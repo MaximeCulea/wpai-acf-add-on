@@ -1,6 +1,11 @@
 <?php
 
-function pmai_is_acf_update_allowed( $cur_meta_key, $options ){
+/**
+ * @param $cur_meta_key
+ * @param $options
+ * @return mixed|void
+ */
+function pmai_is_acf_update_allowed($cur_meta_key, $options ){
 
     if ($options['is_keep_former_posts'] == 'yes') return apply_filters('pmai_is_acf_update_allowed', false, $cur_meta_key, $options);
 
@@ -182,11 +187,6 @@ function pmai_is_acf_update_allowed( $cur_meta_key, $options ){
 				}			
 			}
 		}
-
-		return apply_filters('pmai_is_acf_update_allowed', true, $cur_meta_key, $options);		
-
+		return apply_filters('pmai_is_acf_update_allowed', true, $cur_meta_key, $options);
 	}
-	
 }
-
-?>

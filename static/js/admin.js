@@ -50,17 +50,17 @@
 		pmai_repeater_clone($parent);
 
 	});
-	
+
 	$('.add_layout_button').live('click', function(){
-		
-		var $parent = $(this).parents('.acf-flexible-content:first');	
-		
-		var $dropdown = $parent.children('.add_layout').children('select');
-		
+
+		var $parent = $(this).parents('.acf-flexible-content:first');
+
+		var $dropdown = $parent.children('.add_layout').children('select'); //$('.add_layout select');
+
 		if ($dropdown.val() == "" || $dropdown.val() == "Select Layout") return;
 
 		var $clone = $parent.children('.clones:first').children('div.layout[data-layout = ' + $dropdown.val() + ']').clone();
-		
+
 		var $number = parseInt($parent.children('.values:first').children().length) + 1;
 
 		$clone.find('.fc-layout-order:first').html($number);
